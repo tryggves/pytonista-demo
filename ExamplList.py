@@ -23,7 +23,7 @@ print('mylist1[3:]', end=' ')
 print(mylist1[3:])
 
 print()
-print,('================')
+print('================')
 print('Demo matrixes')
 mymatrix=[[1,2,3],
 	[4,5,6],

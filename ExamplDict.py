@@ -1,4 +1,4 @@
-# Here are introductony examples of ditionaries or mappings as they are also 
+# Here are introductory examples of dictionaries or mappings as they are also
 # known as. It demonstrates Python’s flexibility in creating data 
 # structures that can be easily expanded.
 

@@ -1,5 +1,8 @@
 # Here are some basic string examples
 
+# Regular expression handling
+import re
+
 mystr='Hei og hå. Nå tester vi strenger.'
 
 str2='Så har vi den andre strengen.'
@@ -50,7 +53,13 @@ mylist=str3.rsplit()
 print(mylist[2])
 print(mylist)
 
-# Iterate over mylist
-#for (word in mylist)
-#	print(word)
+# Split string on first instance of a character
+print("\n\n")
+patched_name = "TN_PGS time stamp_string"
+column_parts = patched_name.split('_', 1)
+print("Patched name: ", patched_name, end=' -> ')
+print(". Column parts: ", column_parts)
+patched_part = re.sub(' ', '', column_parts[1])
+patched_name = column_parts[0] + "_" + patched_part.upper()
+print("New patched name: ", patched_name)
 

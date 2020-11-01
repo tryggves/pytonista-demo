@@ -1,7 +1,12 @@
 ############################################################################
 # Shows unpacking of variables.
+# Shows how to pass variable number of arguments to functions.
+# There are two variants:
+# - non-keyworded variable length argument list - use *args
+# - keyworded variable length argument list - use **kwargs
 #
 # References>
+# https://www.geeksforgeeks.org/args-kwargs-python/
 # https://medium.com/swlh/change-the-way-you-write-python-code-with-one-extra-character-6665b73803c1
 #
 ############################################################################

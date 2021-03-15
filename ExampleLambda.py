@@ -7,10 +7,10 @@
 # https://realpython.com/python-reduce-function/
 #
 # Lambda expression contains:
-# keyword "lambda"
-# Any number of arguments
-# ":"
-# Expression with result returned
+# 1) keyword "lambda"
+# 2) Any number of arguments
+# 3) ":"
+# 4) Expression with result returned
 
 import math
 import functools
@@ -21,6 +21,7 @@ import os.path
 # !!!! Bad practice !!!
 f = lambda a: a + 10
 
+# Variable f has been assigned the object containing a lambda function
 print(f(5))
 
 # Enclose lambda expression in parentheses and it can be executed by passing parameter
@@ -57,6 +58,28 @@ print(f'Argument ex 2: {(lambda x, y=0, z=0: x + y + z)(1, y=2, z=3)}')
 # print((lambda x, *, y=0, z=0: x + y + z)(1, 2, 3, y=4, z=5))
 print(f'Argument ex 3: {(lambda u, v, y=0, z=0: u + v + y + z)(1, 2, y=4, z=5)}')
 
+
+#######################################################################################
+# Function that returns the call of a lambda expression depending
+# on the given operation parameter and the two arguments. Pretty
+# neat example.
+
+# get() method gets the dictionary element given by operation (add, sub, etc),
+# in this case the lambda expression.
+# If the operation does not exist the lambda: None is returned
+# Note the ending () which calls the returned lambda function
+def dispatch_dict(operation, x, y):
+    return {
+        'add': lambda: x + y,
+        'sub': lambda: x - y,
+        'mul': lambda: x * y,
+        'div': lambda: x / y,
+    }.get(operation, lambda: None)()
+
+
+print(f"1+2={dispatch_dict('add', 1, 2)}")
+print(f"2-1={dispatch_dict('sub', 2, 1)}")
+print(f"2unknown1={dispatch_dict('unknown', 2, 1)}")
 
 ################################################################################
 # Function returning another function - demonstrate the inner function

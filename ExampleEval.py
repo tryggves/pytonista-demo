@@ -20,6 +20,16 @@ print(f'x + 100 is {eval("x + 100", {"x": x})}')
 # This will result in runtime error
 # result = eval("x + y", {"x": x})
 
-# Include y in the globals parameter
+# Include y in the globals parameter - THIS WAY YOU CAN RESTRICT THE GLOBAL
+# VARIABLES TO BE ACCESSIBLE TO EVAL() - FOR SECURITY.
 result = eval("x + y", {"x": x, "y": y})
 print(f'Result is {result}')
+
+# You can achieve the same without passing globals parameter explicitly - global
+# variable are implicitly passed to the eval() function
+result2 = eval("x + y")
+print(f'Result 2 is {result2}')
+
+# Passing local variables
+result3 = eval("x - 10", {}, {"x": 10000})
+print(f'Result 3 is {result3}')

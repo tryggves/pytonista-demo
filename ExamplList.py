@@ -3,8 +3,8 @@
 print()
 print('================')
 print('Demo lists...')
-mylist1=[1,2,3,4,5,6,7,8]
-mylist2=[10,20,30,40,50,60,70,80]
+mylist1 = [1, 2, 3, 4, 5, 6, 7, 8]
+mylist2 = [10, 20, 30, 40, 50, 60, 70, 80]
 
 print('================')
 # Notice the end=' ' property which continues the next print on the same line
@@ -21,6 +21,21 @@ print(mylist1[1:3])
 
 print('mylist1[3:]', end=' ')
 print(mylist1[3:])
+
+# Clearing elements from a list
+del mylist1[:]
+print(f'After clearing elements in mylist1: {mylist1}')
+
+# Replace elements in list without creating new list
+mylist1[:] = [7, 8, 9]
+a = mylist1
+print(f'List a is: {a}')
+print(f'Testing if a is ref to mylist1 {a is mylist1}')
+
+# Create shallow copy  of list
+b = mylist1[:]
+print(f'List b is: {b}')
+print(f'Testing if b is ref to mylist1 {b is mylist1}')
 
 print()
 print('================')

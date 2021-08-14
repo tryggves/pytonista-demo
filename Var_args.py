@@ -38,9 +38,11 @@ def version3(a, b, *args, **kwargs):
             print(key, ':', value)
 
 mynumbers = range(100)
-print(mynumbers)
+# This prints the object
+print(f"object: {mynumbers}")
 
 # This prints mynumbers list returned by the range() function
+print(f"unpackaged:")
 print(*mynumbers)
 
 d = {'key1': 'A',
@@ -64,3 +66,34 @@ version2(10, 20, 30)
 # version2(10,20,30, Extra=40)
 # Fixed by version 3
 version3(10,20,30,40,50, Extra=40)
+
+# Test all() function
+class Fruit:
+    def __init__(self, name):
+        self.name = name
+        self.cubed = False
+
+    def cube(self):
+        self.cubed = True
+
+
+class FruitSalad:
+    def __init__(self, *fruit_bowl):
+        self.fruit = fruit_bowl
+        self._cube_fruit()
+
+    def _cube_fruit(self):
+        for fruit in self.fruit:
+            fruit.cube()
+
+fruit_bowl = [Fruit("apple"), Fruit("banana")]
+fruit_salad = FruitSalad(*fruit_bowl)
+fruit_cubed = (fruit.cubed for fruit in fruit_salad.fruit)
+print(fruit_cubed)
+# same as:
+# all(fruit.cubed for fruit in fruit_salad.fruit)
+is_fruit_cubed = all(fruit_cubed)
+if (is_fruit_cubed):
+    print('Proper fruit salad')
+else:
+    print('bad fruit')

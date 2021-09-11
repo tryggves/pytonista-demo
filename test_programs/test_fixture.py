@@ -24,6 +24,9 @@ class FruitSalad:
             fruit.cube()
 
 
+# For explanation of @ syntax see https://en.wikipedia.org/wiki/Python_syntax_and_semantics#Decorators
+# For info on fixtures: https://docs.pytest.org/en/6.2.x/fixture.html#fixture
+# Arrange-act-assert pattern
 # Arrange
 @pytest.fixture
 def fruit_bowl():
@@ -40,12 +43,13 @@ def test_fruit_salad(fruit_bowl):
 
 
 # Arrange for the next tests
-@pytest.fixture()
+@pytest.fixture
 def my_fruit():
     return Fruit("apple")
 
 
-@pytest.fixture()
+# Parentheses seems to be optional...
+@pytest.fixture
 def my_fruit_basket(my_fruit):
     return [Fruit("banana"), my_fruit]
 

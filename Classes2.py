@@ -3,20 +3,24 @@
 # Example classes and objects
 # Everything (almost) in Python is an object
 # Check effect of class variables versus instance variables.
+# Class variable is like static in C++ and Java
+# Instance variable is like class member variable (public)
 #
 ###########################################################################################
+import typing
+
 
 # Declare the class
 class SpreadConfig:
     # Class variables are shared between instances - similar to C++/Java static variables.
     vessel_info = dict()
 
-    def __init__(self, data: {}):
+    def __init__(self, data: typing.Dict):
         self.my_instance_var = dict()
         for i in data:
             self.my_instance_var[i] = data[i]
 
-    def get_vessel_info(self):
+    def get_vessel_info(self) -> typing.Dict:
         if len(self.vessel_info) == 0:
             self.vessel_info["verdi1"] = 10
             self.vessel_info["verdi2"] = 20

@@ -3,6 +3,7 @@
 # Regular expression handling
 import re
 
+# String with unicode character
 test_string = " V1 latitude (°)"
 
 print(test_string)
@@ -17,14 +18,17 @@ degree_sign2 = u"\u00b0"
 degree_sign3 = '\u00b0'
 
 
-print("Degree sign is:", degree_sign)
-print("Degree sign 2 is:", degree_sign2)
-print("Degree sign 3 is:", degree_sign3)
+print("Degree character is:", degree_sign)
+print("Degree character 2 is:", degree_sign2)
+print("Degree character 3 is:", degree_sign3)
 
-deg_pattern = re.compile(degree_sign)
-patched = deg_pattern.sub('deg', test_string)
+# Create regular expression
+deg_re = re.compile(degree_sign)
+# Substitute unicode degree character with string 'deg'
+patched = deg_re.sub('deg', test_string)
 print("Patch 1:", patched)
 
+# Repeat the substitution - this time using the python3 unicode character
 patched = re.sub('\u00b0', 'deg', test_string)
 print("Patch 2:", patched)
 

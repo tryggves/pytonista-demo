@@ -59,7 +59,7 @@ if __name__ == '__main__':
 
     print('=============================================================================================')
     print('Generator example')
-    test_file = 'dblog.20200504.TTN.ORCA.raw.dwh'
+    test_file = 'input_data.txt'
     print(f'Open test file {test_file}')
     csv_gen = csv_reader(test_file)
     row_count = 0

@@ -3,8 +3,8 @@
 # List comprehension
 #
 
-import math
 import functools
+import math
 import operator
 import os.path
 

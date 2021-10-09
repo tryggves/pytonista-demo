@@ -3,7 +3,6 @@
 #
 
 import json
-import base64
 
 # data = "{\"bucket\": \"pgs-git-datalake-nonprod-eur4-orca-compiled\"," \
 #        "\"name\": \"HYP/HYP_OrcaCompiled_2021-08-31_12-00.json\"}"

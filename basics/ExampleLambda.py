@@ -12,12 +12,6 @@
 # 3) ":"
 # 4) Expression with result returned
 
-import math
-import functools
-import operator
-import os
-import os.path
-
 # !!!! Bad practice !!!
 f = lambda a: a + 10
 

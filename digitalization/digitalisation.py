@@ -1,5 +1,4 @@
 import numpy as np
-import matplotlib.pyplot as plt
 
 # this creates a 4x3 two dimensional array
 s = np.random.randn(4, 3)

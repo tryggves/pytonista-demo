@@ -1,2 +1,2 @@
 # Project exclude paths
-/cdfvenv/
+protobuf/*_pb2.py

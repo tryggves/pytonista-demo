@@ -27,6 +27,7 @@ def apply_map_on_column():
     at_df.arc_type = at_df.arc_type.apply(lambda x: arc_type_map[x])
     print('=== after applying arc_type_map ========================')
     print(at_df)
+    print(at_df.dtypes)
 
 
 def make_columns_map(vessel: str, source: str) -> Dict[str, str]:

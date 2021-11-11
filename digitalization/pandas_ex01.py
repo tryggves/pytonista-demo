@@ -18,12 +18,15 @@ def apply_map_on_column():
                                                                      'CLOCKWISE']}
     at_df = pd.DataFrame(arc_type_data)
     print('=== arc_type dataframe =================================')
-    print(at_df)
+    print(at_df.to_string())
+    print(at_df.dtypes)
 
-    # Convert column arc_type values to int map
+    # Convert column arc_type values to int map - this iterates over all
+    # values in the column (nice feature)
+    # Parameter x to expression is the value of dataframe column arc_type
     at_df.arc_type = at_df.arc_type.apply(lambda x: arc_type_map[x])
     print('=== after applying arc_type_map ========================')
-    print(at_df)
+    print(at_df.to_string())
     print(at_df.dtypes)
 
 
@@ -46,17 +49,19 @@ df = pd.DataFrame(data)
 print('=== df ==============================')
 print(df)
 
-# Apply a function
+# Apply a function to all elements in dataframe
 new_df = df.apply(lambda x: x**2, axis=1)
-print('== After apply... ========================')
+print('== Square of all elements in df ... ========================')
 print(new_df)
 
+# Axis 0 is the vertical axis, hence all columns are summed
 new_df = df.apply(np.sum, axis=0)
-print('== After sum axis=0 ... ========================')
+print('== Sum of columns (axis=0) ... ========================')
 print(new_df)
 
+# Axis 1 is the horizontal axis, hence all rows are summed
 new_df = df.apply(np.sum, axis=1)
-print('== After sum axis=1 ... ========================')
+print('== Sum of rows (axis=1) ... ========================')
 print(new_df)
 
 # Apply function on one column only

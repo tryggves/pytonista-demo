@@ -63,3 +63,11 @@ patched_part = re.sub(' ', '', column_parts[1])
 patched_name = column_parts[0] + "_" + patched_part.upper()
 print("New patched name: ", patched_name)
 
+test_path = "vessel_sep[0].strm_sep"
+print(f'\n---------------------------------------------------------------------------------\n'
+      f'test_path: {test_path}')
+path_list = test_path.split('.')
+match_index = re.findall('\[[0-9]\]', path_list[0])
+print(f"Number of hits: {len(match_index)}")
+first_part = path_list[0].split('[')[0]
+print(f"first_part: {first_part}")

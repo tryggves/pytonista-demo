@@ -8,7 +8,7 @@
 # Reference: https://realpython.com/python-property/
 #
 ###########################################################################################
-
+# Local modules supporting this example
 from point import Point, PythonicPoint
 from circle import Circle
 
@@ -39,6 +39,9 @@ def main():
     # Set new value of radius
     circle.radius = 100
     print(f'Circle radius: {circle.radius}')
+
+    print(dir(Circle.radius))
+    print(Circle.radius.fdel)
 
 
 if __name__ == '__main__':

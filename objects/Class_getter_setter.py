@@ -9,8 +9,8 @@
 #
 ###########################################################################################
 # Local modules supporting this example
+from circle import Circle, DecoratorCircle
 from point import Point, PythonicPoint
-from circle import Circle
 
 
 def main():
@@ -42,6 +42,11 @@ def main():
 
     print(dir(Circle.radius))
     print(Circle.radius.fdel)
+
+    # Decorator property
+    dCircle = DecoratorCircle(10)
+    r = dCircle.radius
+    print(f'Radius is {r}')
 
 
 if __name__ == '__main__':

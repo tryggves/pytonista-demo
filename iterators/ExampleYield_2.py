@@ -4,14 +4,14 @@
 # An infinite generator function that prints
 # next square number. It starts with 1
 def nextSquare():
-    print('Call function nextSquare()')
+    print('nextSquare: Call function nextSquare()')
     i = 1
 
     # An Infinite loop to generate squares
     while True:
         yield i * i # Function returns here but saves state and instruction pointer
         i += 1  # Next execution resumes
-        print('Execute after yield in nextSquare()')
+        print('Resume execute after yield in nextSquare()')
     # from this point
 
 
@@ -23,4 +23,4 @@ for num in nextSquare():
     if num > 100:
         print(f'num is {num}. Break.')
         break
-    print(f'Result from nextSquare(): {num}')
+    print(f'main: Result from nextSquare(): {num}')

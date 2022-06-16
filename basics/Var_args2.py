@@ -37,4 +37,4 @@ print(*my_first_dict)
 # This prints the dictionary values
 print(*my_first_dict.values())
 
-experimental = [**my_first_dict]
+# experimental = [**my_first_dict]

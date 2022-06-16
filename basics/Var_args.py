@@ -15,6 +15,7 @@ def version1(a, b):
     print(a)
     print(b)
 
+
 # Handle variable numbers of parameters
 def version2(a, b, *args):
     print(a)
@@ -23,6 +24,7 @@ def version2(a, b, *args):
     if args:
         for c in args:
             print(c)
+
 
 # Handle variable number of arguments including key,value arguments
 def version3(a, b, *args, **kwargs):
@@ -37,6 +39,7 @@ def version3(a, b, *args, **kwargs):
         for key, value in zip(kwargs.keys(), kwargs.values()):
             print(key, ':', value)
 
+
 mynumbers = range(100)
 # This prints the object
 print(f"object: {mynumbers}")
@@ -45,8 +48,7 @@ print(f"object: {mynumbers}")
 print(f"unpackaged:")
 print(*mynumbers)
 
-d = {'key1': 'A',
-    'key2': 'B'}
+d = {'key1': 'A', 'key2': 'B'}
 # This prints the keys
 print(*d)
 e = {**d}
@@ -67,6 +69,7 @@ version2(10, 20, 30)
 # Fixed by version 3
 version3(10,20,30,40,50, Extra=40)
 
+
 # Test all() function
 class Fruit:
     def __init__(self, name):
@@ -86,6 +89,7 @@ class FruitSalad:
         for fruit in self.fruit:
             fruit.cube()
 
+
 fruit_bowl = [Fruit("apple"), Fruit("banana")]
 fruit_salad = FruitSalad(*fruit_bowl)
 fruit_cubed = (fruit.cubed for fruit in fruit_salad.fruit)
@@ -93,7 +97,7 @@ print(fruit_cubed)
 # same as:
 # all(fruit.cubed for fruit in fruit_salad.fruit)
 is_fruit_cubed = all(fruit_cubed)
-if (is_fruit_cubed):
+if is_fruit_cubed:
     print('Proper fruit salad')
 else:
     print('bad fruit')

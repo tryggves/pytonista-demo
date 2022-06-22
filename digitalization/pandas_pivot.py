@@ -7,7 +7,7 @@ import numpy as np
 import pandas._testing as tm
 
 
-def unpivot(frame):
+def unpivot(frame: pd.DataFrame):
     N, K = frame.shape
     data = {
         "value": frame.to_numpy().ravel("F"),

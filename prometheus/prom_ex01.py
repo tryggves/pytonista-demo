@@ -1,10 +1,10 @@
 #
 # Prometheus demo app
 #
-# This is an example from the client_python repo
+# This is an example based on code from the client_python repo
 #
 
-from prometheus_client import start_http_server, Summary
+from prometheus_client import start_http_server, Summary, Gauge
 import random
 import time
 
@@ -23,5 +23,11 @@ if __name__ == '__main__':
     # Start up the server to expose the metrics.
     start_http_server(8000)
     # Generate some requests.
+    num_datapoints_metric = Gauge('orca_cdf_datapoints_inserted', 'ORCA netsolution vessel datapoints ingested',
+                           labelnames=['vessel', 'cdf_datapoint_type'])
     while True:
-        process_request(random.random())
+        # process_request(random.random())
+        num_datapoints_metric.labels('VAN', 'orca_netsolution_vessel')
+        num_datapoints_metric.set(random.randint(1000, 5000))
+        # Sleep 30 seconds before setting next datapoint
+        time.sleep(30)

@@ -27,7 +27,7 @@ if __name__ == '__main__':
                            labelnames=['vessel', 'cdf_datapoint_type'])
     while True:
         # process_request(random.random())
-        num_datapoints_metric.labels('VAN', 'orca_netsolution_vessel')
+        num_datapoints_metric.labels(vessel='VAN', cdf_datapoint_type='orca_netsolution_vessel')
         num_datapoints_metric.set(random.randint(1000, 5000))
         # Sleep 30 seconds before setting next datapoint
         time.sleep(30)

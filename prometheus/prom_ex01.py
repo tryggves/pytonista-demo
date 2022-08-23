@@ -35,10 +35,17 @@ if __name__ == '__main__':
         # Set metric 1
         orca_metric = num_datapoints_metric.labels(vessel='VAN', cdf_datapoint_type='orca_netsolution_vessel')
         orca_metric.set(random.randint(1000, 5000))
-        # Sleep 30 seconds before setting next datapoint
-
         # Set metric 2
         vessel_status = vessel_status_metric.labels(vessel='VAN')
         vessel_status.set(1)
 
+        # Sleep 30 seconds before setting next datapoint
+        time.sleep(30)
+
+        orca_metric = num_datapoints_metric.labels(vessel='HYP', cdf_datapoint_type='orca_netsolution_vessel')
+        orca_metric.set(random.randint(4000, 5000))
+        vessel_status = vessel_status_metric.labels(vessel='HYP')
+        vessel_status.set(1)
+
+        # Sleep 30 seconds before setting next datapoint
         time.sleep(30)

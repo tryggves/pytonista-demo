@@ -2,6 +2,7 @@
 # Collect decorators into a module to make them re-usable.
 #
 import functools
+# from functools import wraps
 
 
 def do_twice(func):
@@ -10,6 +11,9 @@ def do_twice(func):
     #
     # Note: The func argument should be a function that can have any
     #       number of arguments
+    # Note the use of decorator from functool package (@functools.wraps). This will preserve the
+    # information about the original function (func)
+    @functools.wraps(func)
     def wrapper_do_twice(*args, **kwargs):
         # *args and **kwargs unpacks the arguments
         # see basics/Var_args.py

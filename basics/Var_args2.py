@@ -31,10 +31,21 @@ my_first_dict = {"A": 1, "B": 2}
 my_second_dict = {"C": 3, "D": 4}
 my_merged_dict = {**my_first_dict, **my_second_dict}
 
-print(my_merged_dict)
+print(f'my_merged_dict is {my_merged_dict}')
 # This prints the dictionary keys
-print(*my_first_dict)
+print('Dictionary keys')
+print(*my_merged_dict)
 # This prints the dictionary values
-print(*my_first_dict.values())
+print('Values')
+print(*my_merged_dict.values())
 
 # experimental = [**my_first_dict]
+# experimental = list(*my_first_dict)
+print('Experiment with unwrapping')
+print(*my_merged_dict)
+# experimental is a list of keys from my_merged_dict
+experimental = [*my_merged_dict]
+print(experimental)
+print(*experimental, sep=';')
+print(*experimental, sep=' \\\n')
+

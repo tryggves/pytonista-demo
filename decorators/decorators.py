@@ -1,8 +1,9 @@
 #
 # Collect decorators into a module to make them re-usable.
 #
-import functools
 # from functools import wraps
+import functools
+import time
 
 
 def do_twice(func):
@@ -37,8 +38,25 @@ def repeat(num_times=0):
     def decorator_repeat(func):
         @functools.wraps(func)
         def wrapper_repeat(*args, **kwargs):
+            value = None
             for _ in range(num_times):
                 value = func(*args, **kwargs)
+            # This return ensures that the wrapped function return value
+            # is passed to the caller.
             return value
         return wrapper_repeat
     return decorator_repeat
+
+
+def timer(func):
+    """Print the runtime of the decorated function"""
+    @functools.wraps(func)
+    def wrapper_timer(*args, **kwargs):
+        start_time = time.perf_counter()  # 1
+        value = func(*args, **kwargs)
+        end_time = time.perf_counter()  # 2
+        run_time = end_time - start_time  # 3
+        print(f"Finished {func.__name__!r} in {run_time:.4f} secs")
+        return value
+
+    return wrapper_timer

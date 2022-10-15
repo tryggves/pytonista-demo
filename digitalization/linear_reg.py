@@ -6,12 +6,14 @@ import numpy as np
 from sklearn.linear_model import LinearRegression
 
 # Same array as 1 dimensional
-x_tmo = np.array([5, 15, 25, 35, 45, 55])
+x_tmp = np.array([5, 15, 25, 35, 45, 55])
+print(f'x_tmp={x_tmp}')
 # Flip the array into 2 dimensional with 1 column and value in rows.
+print('Flip the array into 2 dimensional with 1 column and value in rows.')
 x = np.array([5, 15, 25, 35, 45, 55]).reshape((-1, 1))
-print(x)
+print(f'x={x}')
 y = np.array([5, 20, 14, 32, 22, 38])
-print(y)
+print(f'y={y}')
 
 model = LinearRegression().fit(x, y)
 

@@ -12,8 +12,10 @@ functions directly and always use str() and repr() functions.
 
 # When To Use __repr__ vs __str__?
 # Emulate what the std lib does:
-import datetime
-today = datetime.date.today()
+from datetime import datetime, date, timedelta
+import time
+
+today = date.today()
 
 # Result of __str__ should be readable:
 print(f"1: {str(today)}")
@@ -27,3 +29,19 @@ print(f"2: {repr(today)}")
 # __repr__ to inspect objects:
 # >>> today
 # datetime.date(2017, 2, 2)
+
+# Get epoch timestamp from date back in time
+current_time = time.time()
+print(f'current_time={current_time}')
+nb_days_time = timedelta(days=3).total_seconds()
+print(f'nb_days_time={nb_days_time}')
+from_time = current_time - nb_days_time
+print(f'from_time={int(from_time)}')
+
+# Work with dates
+from_date = datetime.today()
+from_date_reset = from_date.replace(hour=0, minute=0, second=0, microsecond=0)
+from_date_adjusted = from_date_reset - timedelta(days=3)
+
+from_time_date = time.mktime(from_date_adjusted.timetuple())
+print(f'from_time_date={from_time_date}')

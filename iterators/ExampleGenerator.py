@@ -22,22 +22,23 @@ def to_float(x: str):
         return float("nan")
 
 
-print("List comprehension list")
 # Here is the same using list comprehension
 lc_list = [to_float(x) for x in my_numbers]
-print(lc_list)
+print(f'list comprehension list: {lc_list}')
 print()
 
 #####################################################################################
 # Generator expressions return iterators as map() does
+# Only difference from list comprehension is the use of () instead of []
 print("Generator expression")
 gen_list = list(to_float(x) for x in my_numbers)
-print(gen_list)
+print(f'Generator list: {gen_list}')
 print()
 
 # This shows that the generator expression returns an iterator. In this
 # case it is used in the loop examples below. The for loop is the easiest
 # to understand.
+# In fact this while consruct is what implicitly happens in a for-loop
 print('This shows that the generator expression returns an iterator.')
 gen_iterator = (to_float(x) for x in my_numbers)
 num = next(gen_iterator)

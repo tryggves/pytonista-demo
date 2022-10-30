@@ -1,4 +1,7 @@
 #!/usr/bin/env python
+#
+# https://realpython.com/list-comprehension-python/
+#
 
 print("List comprehensions example")
 
@@ -14,6 +17,10 @@ print(f'squares: {squares}')
 # new_list = [expression for member in iterable]
 squares_lc = [i*i for i in range(10)]
 print(f'squares_lc: {squares_lc}')
+squares_lc_2 = [i*i for i in range(10) if i > 5]
+print(f'Squared greater than 5: {squares_lc_2}')
+# You can use a conditional expression too
+
 
 # =====================================================================
 # Using map function
@@ -31,6 +38,7 @@ final_prices = list(map(price_with_tax, tax_nums))
 print(f'After tax: {final_prices}')
 
 # List comprehensions version
+# Note: This syntax is much more readable than the list(map()) above
 final_prices_lc = [price_with_tax(price) for price in tax_nums]
 print(f'After tax LC: {final_prices_lc}')
 # =====================================================================

@@ -66,3 +66,13 @@ print('lowercase example:', month.lower())
 concatMnth = month + month_oct
 print('Concatenated: ', concatMnth)
 
+# Formatting numbers
+squares_lc_2 = [i*i for i in range(10) if i > 5]
+print(f'Before formatting: {squares_lc_2}')
+for num in squares_lc_2:
+    print(f'{num:.2f}')
+print(f'Print with 2 decimals:[', end='')
+for num in squares_lc_2:
+    print(f'{num:.2f}', end='')
+    print(', ', end='')
+print(']')

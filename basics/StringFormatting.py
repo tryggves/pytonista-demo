@@ -15,6 +15,8 @@
 # Strings contatenation
 # Strings filtering including reqular expressions
 # String input output.
+# String interpolation
+# Raw strings
 
 multiline_text = """
 Welcome to this multi line text that can be 
@@ -88,3 +90,9 @@ for num in squares_lc_2:
     print(f'{num:.2f}', end='')
     print(', ', end='')
 print(']')
+
+# Raw strings are prefixed with character 'r'
+print('\nRaw string example')
+print(r'This is a raw string \n where \ is not an escape character')
+print('This is not a raw string \n where \\ is treated as escape character')
+

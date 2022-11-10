@@ -7,6 +7,10 @@
 # String formatting
 # https://realpython.com/python-formatted-output/#the-string-format-method-arguments
 
+# String interpolation is the method of replacing placeholders with actual input at
+# runtime when generating or outputting strings
+# https://www.programiz.com/python-programming/string-interpolation
+
 # What are the most useful features
 # Strings contatenation
 # Strings filtering including reqular expressions
@@ -28,6 +32,14 @@ year_2020 = 2020
 print("\nF-string formatting introduced in version 3.6")
 print(f'Hello format string of {month} {year}')
 print(f'Hello format string of {month_oct} {year_2020}')
+
+
+# Using the % operator
+print('\nTry out the % operator')
+print('year is %d' % year)
+# The % operator takes one parameter, hence the tuple containing the variables
+print('year is %d. month is %s' % (year, month))
+print('year is %d. month is %s. mont_oct is %s' % (year, month, month_oct))
 
 # Replacement field format:
 # {[<name>][!<conversion>][:<format_spec>]}

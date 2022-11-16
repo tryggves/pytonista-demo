@@ -23,6 +23,8 @@ print(f'Squared greater than 5: {squares_lc_2}')
 
 
 # =====================================================================
+# map() is useful when you need to apply a transformation function to
+# each item in an iterable and transform them into a new iterable.
 # Using map function
 tax_nums = [1.83, 348.28, 34.34, 34771.23, 38471.33]
 print(f'Before tax: {tax_nums}')
@@ -34,6 +36,11 @@ def price_with_tax(price):
 
 
 # Note: use list constructor to the output of map()
+final_prices_map = map(price_with_tax, tax_nums)
+# map object is an iterator
+for fp in final_prices_map:
+    print(fp)
+
 final_prices = list(map(price_with_tax, tax_nums))
 print(f'After tax: {final_prices}')
 

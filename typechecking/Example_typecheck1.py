@@ -50,26 +50,38 @@ def csv_reader_ret(file_name: str):
         return row
 
 
-if __name__ == '__main__':
-    b = f()
-    print(f'b(2) = {b(2)}')
-    print(f'b(3) = {b(3)}')
-    print(f'b(4) = {b(4)}')
-    print(f'b(5) = {b(5)}')
+def headline(text: str, align: bool = True) -> str:
+    if align:
+        return f"{text.title()}\n{'-' * len(text)}"
+    else:
+        return f" {text.title()} ".center(50, "o")
 
-    print('=============================================================================================')
-    print('Generator example')
-    test_file = 'input_data.txt'
-    print(f'Open test file {test_file}')
-    csv_gen = csv_reader(test_file)
-    row_count = 0
-    for next_row in csv_gen:
-        row_count += 1
-    print(f'Number of rows: {row_count}')
 
-    print('Test calling function with return statement. This will result in only one line')
-    csv_gen = csv_reader_ret(test_file)
-    row_count = 0
-    for next_row in csv_gen:
-        row_count += 1
-    print(f'Number of rows: {row_count}')
+print(headline("python type checking"))
+# Pycharm type checker kicks in below
+print(headline("use mypy", align="center"))
+print(headline("use mypy", align=False))
+
+
+b = f()
+print(f'b(2) = {b(2)}')
+print(f'b(3) = {b(3)}')
+print(f'b(4) = {b(4)}')
+print(f'b(5) = {b(5)}')
+
+print('=============================================================================================')
+print('Generator example')
+test_file = 'input_data.txt'
+print(f'Open test file {test_file}')
+csv_gen = csv_reader(test_file)
+row_count = 0
+for next_row in csv_gen:
+    row_count += 1
+print(f'Number of rows: {row_count}')
+
+print('Test calling function with return statement. This will result in only one line')
+csv_gen = csv_reader_ret(test_file)
+row_count = 0
+for next_row in csv_gen:
+    row_count += 1
+print(f'Number of rows: {row_count}')

@@ -10,8 +10,7 @@
 # Reference: https://realpython.com/instance-class-and-static-methods-demystified/
 #
 ###########################################################################################
-import math
-import typing
+from typing import List
 
 
 class MyGraphClass:
@@ -25,13 +24,13 @@ class MyGraphClass:
         print(f'Number of edges is {self.m_edge_count}')
 
     @classmethod
-    def set_edges(cls, new_edges: []):
+    def set_edges(cls, new_edges: List[int]) -> None:
         cls.m_edges = new_edges
         cls.m_edge_count = len(cls.m_edges)
         # cls.m_count_updates += 1
 
     @staticmethod
-    def class_static_method():
+    def class_static_method() -> None:
         print(f'In class static method')
 
     # @property
@@ -41,37 +40,6 @@ class MyGraphClass:
     # @property
     # def m_count_updates(self):
     #     return self.m_count_updates
-
-
-# Here is an example using classmethods to produce object instances where there are
-# varying parameters to the constructor.
-# In python a class can only have one __init__() function
-#
-class Pizza:
-    def __init__(self, ingredients: [], radius=4):
-        self.radius = radius
-        self.ingredients = ingredients
-
-    # This is the method printing object representation as string
-    def __repr__(self):
-        return f'Pizza({self.radius!r}, {self.ingredients!r})'
-
-    # Object instance methods
-    def area(self):
-        return self.circle_area(self.radius)
-
-    # Factory class methods
-    @classmethod
-    def margherita(cls):
-        return cls(['mozarella', 'tomatoes'])
-
-    @classmethod
-    def prosciutto(cls):
-        return cls(['mozarella', 'tomatoes', 'ham'])
-
-    @staticmethod
-    def circle_area(radius):
-        return radius ** 2 * math.pi
 
 
 def main():
@@ -97,14 +65,6 @@ def main():
     MyGraphClass.class_static_method()
     # Can call static method through object instance
     my_second_graph.class_static_method()
-
-    # Pizza examples using factory methods
-    my_margherita = Pizza.margherita()
-    print(f'Pizza 1: {my_margherita}')
-    my_prosciutto = Pizza.prosciutto()
-    print(f'Pizza 2: {my_prosciutto}')
-    print(f'Pizza 1 area: {my_margherita.area()}')
-    print(f'Pizza 1 area (static method call): {Pizza.circle_area(4)}')
 
 
 if __name__ == '__main__':

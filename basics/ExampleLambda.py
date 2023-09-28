@@ -75,6 +75,7 @@ print(f"1+2={dispatch_dict('add', 1, 2)}")
 print(f"2-1={dispatch_dict('sub', 2, 1)}")
 print(f"2unknown1={dispatch_dict('unknown', 2, 1)}")
 
+
 ################################################################################
 # Function returning another function - demonstrate the inner function
 # becoming a closure:

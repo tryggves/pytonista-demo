@@ -22,7 +22,8 @@ def greet_bob(greeter_func):
 if __name__ == '__main__':
     print('======== EXAMPLE 1 ===================================================')
 
-    # Here we pass say_hello function as parameter  to greet_bob.
-    # We don't call say_hello - then we would have to pass say_hello()
+    # Here we pass say_hello function reference as parameter  to greet_bob.
+    # We don't call say_hello - then we would have to pass say_hello() with '()' to
+    # which is the syntax for calling the function.
     print(greet_bob(say_hello))
     print(greet_bob(be_awesome))

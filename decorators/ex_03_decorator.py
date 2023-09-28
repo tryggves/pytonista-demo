@@ -61,16 +61,23 @@ if __name__ == '__main__':
     # Call the decorator resulting in setting variable say_whee to the wrapper function
     # declared/defined inside my_decorator function
     print('======= Example 1 ==============================================================')
-    say_whee = my_decorator(say_whee)
-    print(say_whee)
-    # Calling the wrapper which then calls say_whee() function
+    print(f"Call say_whee() without decorator: ", end='')
     say_whee()
 
     print('\n======= Example 2 ==============================================================')
+    say_whee = my_decorator(say_whee)
+    print(f"Callable returned by my_decorator(say_whee): ", end='')
+    print(say_whee)
+    # Calling the wrapper which then calls say_whee() function
+    print('\n======= Example 3 ==============================================================')
+    print("Call the callable function")
+    say_whee()
+
+    print('\n======= Example 4 ==============================================================')
     say_whee = not_during_the_night(say_whee)
     say_whee()
 
-    print('\n======= Example 3 ==============================================================')
+    print('\n======= Example 5 ==============================================================')
     say_hello()
 
     # Example 4

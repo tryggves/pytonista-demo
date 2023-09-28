@@ -36,8 +36,8 @@ if __name__ == '__main__':
     parent()
     print('\n====== Example 2 ==========================================================')
     # parent_1() returns function pointer depending on passed parameter
-    print(parent_1(1))
-    print(parent_1(2))
-    # Here we call the function returned by parent_1()
-    print(parent_1(1)())
-    print(parent_1(2)())
+    print(f"Call 1: Function pointer returned by parent_1: {parent_1(1)}")
+    print(f"Call 2: Function pointer returned by parent_1: {parent_1(2)}")
+    # Here we call the function returned by parent_1() because we add the function call operator ()
+    print(f"Call 3: Value returned by function returned by parent_1: {parent_1(1)()}")
+    print(f"Call 3: Value returned by function returned by parent_1: {parent_1(2)()}")

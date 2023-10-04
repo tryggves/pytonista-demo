@@ -7,11 +7,13 @@
 import concurrent.futures
 import urllib.request
 
-URLS = ['https://www.vg.no/',
-        'http://www.cnn.com/',
-        'http://europe.wsj.com/',
-        'http://www.bbc.co.uk/',
-        'http://some-made-up-domain.com/']
+URLS = [
+    "https://www.vg.no/",
+    "http://www.cnn.com/",
+    "http://europe.wsj.com/",
+    "http://www.bbc.co.uk/",
+    "http://some-made-up-domain.com/",
+]
 
 
 # Retrieve a single page and report the URL and contents
@@ -40,6 +42,6 @@ with concurrent.futures.ThreadPoolExecutor(max_workers=5) as executor:
         try:
             data = future.result()
         except Exception as exc:
-            print('%r generated an exception: %s' % (url, exc))
+            print("%r generated an exception: %s" % (url, exc))
         else:
-            print('%r page is %d bytes' % (url, len(data)))
+            print("%r page is %d bytes" % (url, len(data)))

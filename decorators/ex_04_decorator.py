@@ -9,15 +9,15 @@ import decorators
 
 
 def main():
-    print('==== Example 1 =====================================')
+    print("==== Example 1 =====================================")
 
     @decorators.do_twice
     def say_hello():
-        print('Hello world')
+        print("Hello world")
 
     say_hello()
 
-    print('==== Example 2 =====================================')
+    print("==== Example 2 =====================================")
     # Wrapper supports any number of arguments
 
     @decorators.do_twice
@@ -27,39 +27,45 @@ def main():
         zipped_kwargs = zip(kwargs.keys(), kwargs.values())
         # kwargs is dictionary
         for key, value in zipped_kwargs:
-            print(f'{key} is {value}')
+            print(f"{key} is {value}")
 
-    greet_people(per='per', anders='anders')
+    greet_people(per="per", anders="anders")
 
-    print('==== Example 3 =====================================')
+    print("==== Example 3 =====================================")
 
     @decorators.do_twice
     def greet_people_2(**kwargs):
         # Here is another way to iterate kwargs, why the zip function above?
         for key, value in kwargs.items():
-            print(f'{key} is {value}')
+            print(f"{key} is {value}")
 
-    greet_people_2(person1='kåre', person2='magnus')
+    greet_people_2(person1="kåre", person2="magnus")
 
-    print('==== Example 4 =====================================')
+    print("==== Example 4 =====================================")
 
     @decorators.repeat(num_times=2)
     def hello(name=None):
-        return f'Hello {name}'
-    print(hello('world'))
+        return f"Hello {name}"
 
-    print('''==== Example 5 =====================================
-    Nested decorators''')
+    print(hello("world"))
+
+    print(
+        """==== Example 5 =====================================
+    Nested decorators"""
+    )
 
     # Nested decorators
     @decorators.debug
     @decorators.timer
     def do_work():
         time.sleep(2)
+
     do_work()
 
-    print('''==== Example 6 =====================================
-    Using debug wrapper''')
+    print(
+        """==== Example 6 =====================================
+    Using debug wrapper"""
+    )
 
     @decorators.debug
     def make_greeting(name, age=None):
@@ -69,11 +75,13 @@ def main():
         else:
             return f"Happy {age} birthday, {name}!"
 
-    print(make_greeting('Per'))
-    print(make_greeting('Kåre', 50))
+    print(make_greeting("Per"))
+    print(make_greeting("Kåre", 50))
 
-    print('''==== Example 7 =====================================
-        Apply a decorator to a standard library function''')
+    print(
+        """==== Example 7 =====================================
+        Apply a decorator to a standard library function"""
+    )
     # Apply a decorator to a standard library function
     math.factorial = decorators.debug(math.factorial)
 
@@ -81,8 +89,8 @@ def main():
         return sum(1 / math.factorial(n) for n in range(terms))
 
     e = approximate_e(7)
-    print(f'Approximate e={e}')
+    print(f"Approximate e={e}")
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

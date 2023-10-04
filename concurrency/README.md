@@ -2,5 +2,5 @@
 
 Some concurrent.futures examples.
 
-- TreadPoolExecutor class. 
+- TreadPoolExecutor class.
 - Deadlock

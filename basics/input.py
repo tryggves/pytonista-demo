@@ -1,4 +1,3 @@
-
 def main():
     number_as_string = input("Input number:")
     print(f"Number is {number_as_string}")
@@ -7,5 +6,5 @@ def main():
     print(f"Number is: {number_as_int}")
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

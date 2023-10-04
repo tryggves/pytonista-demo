@@ -26,7 +26,7 @@ class Pizza:
 
     # This is the method printing object representation as string
     def __repr__(self):
-        return f'Pizza({self.radius!r}, {self.ingredients!r})'
+        return f"Pizza({self.radius!r}, {self.ingredients!r})"
 
     # Object instance methods
     def area(self):
@@ -35,30 +35,34 @@ class Pizza:
     # Factory class methods
     @classmethod
     def margherita(cls):
-        return cls(['mozarella', 'tomatoes'])
+        return cls(["mozarella", "tomatoes"])
 
     @classmethod
     def prosciutto(cls):
-        return cls(['mozarella', 'tomatoes', 'ham'])
+        return cls(["mozarella", "tomatoes", "ham"])
 
     @staticmethod
     def circle_area(radius):
-        return radius ** 2 * math.pi
+        return radius**2 * math.pi
 
 
 def main():
-    print('===================================================================================')
+    print(
+        "==================================================================================="
+    )
     print(" Testing static and class methods.")
-    print('===================================================================================')
+    print(
+        "==================================================================================="
+    )
 
     # Pizza examples using factory methods
     my_margherita = Pizza.margherita()
-    print(f'Pizza 1: {my_margherita}')
+    print(f"Pizza 1: {my_margherita}")
     my_prosciutto = Pizza.prosciutto()
-    print(f'Pizza 2: {my_prosciutto}')
-    print(f'Pizza 1 area: {my_margherita.area()}')
-    print(f'Pizza 1 area (static method call): {Pizza.circle_area(4)}')
+    print(f"Pizza 2: {my_prosciutto}")
+    print(f"Pizza 1 area: {my_margherita.area()}")
+    print(f"Pizza 1 area (static method call): {Pizza.circle_area(4)}")
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

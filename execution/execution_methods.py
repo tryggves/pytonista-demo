@@ -1,4 +1,3 @@
-
 # See this for more details on the code:
 # https://realpython.com/python-main-function/
 # https://realpython.com/run-python-scripts/

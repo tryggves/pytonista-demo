@@ -1,5 +1,3 @@
-
-
 import connexion
 from flask import render_template  # Remove: import Flask
 

@@ -4,6 +4,7 @@
 # https://realpython.com/documenting-python-code/
 #
 
+
 class SimpleClass:
     """Class docstring goes here (summary line)
 

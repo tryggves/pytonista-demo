@@ -32,9 +32,14 @@ def my_function(param1: Union[str, int]) -> None:
     print(param1)
 
 
-def cog_datapointsapi_insert(datapoints: Union[List[Dict[Union[int, float, datetime.datetime], Union[int, float, str]]],
-                                               List[Tuple[Union[int, float, datetime.datetime], Union[int, float, str]]]],
-                             id: int = None, external_id: str = None) -> None:
+def cog_datapointsapi_insert(
+    datapoints: Union[
+        List[Dict[Union[int, float, datetime.datetime], Union[int, float, str]]],
+        List[Tuple[Union[int, float, datetime.datetime], Union[int, float, str]]],
+    ],
+    id: int = None,
+    external_id: str = None,
+) -> None:
     pass
 
 
@@ -49,6 +54,6 @@ def main():
     my_function(10)
 
 
-if __name__ == '__main__':
-    print('The value of __name__ is ' + __name__)
+if __name__ == "__main__":
+    print("The value of __name__ is " + __name__)
     main()

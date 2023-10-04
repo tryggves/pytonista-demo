@@ -24,5 +24,5 @@ if __name__ == "__main__":
     m_future = executor.submit(wait_on_future)
     # There is a need for a print() call in the main thread to get output from the
     # worker thread. Maybe this is to trigger the thread scheduler.
-    print('__main__ exiting...')
+    print("__main__ exiting...")
     # print(f'Result: {m_future.result()}')

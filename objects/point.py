@@ -1,5 +1,6 @@
 # Class with getters and setters c++/java style
 
+
 class Point:
     def __init__(self, x, y):
         # CONVENTION: Member variables (private) are prefixed with '_'

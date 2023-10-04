@@ -20,10 +20,10 @@ def wait_on_a():
     return 6
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     executor = ThreadPoolExecutor(max_workers=2)
     a = executor.submit(wait_on_b)
     b = executor.submit(wait_on_a)
     # There is a need for a print() call in the main thread to get output from the
     # worker thread.
-    print('__main__ exiting...')
+    print("__main__ exiting...")

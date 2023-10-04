@@ -11,6 +11,7 @@
 #
 ############################################################################
 
+
 def version1(a, b):
     print(a)
     print(b)
@@ -37,7 +38,7 @@ def version3(a, b, *args, **kwargs):
 
     if kwargs:
         for key, value in zip(kwargs.keys(), kwargs.values()):
-            print(key, ':', value)
+            print(key, ":", value)
 
 
 mynumbers = range(100)
@@ -48,7 +49,7 @@ print(f"object: {mynumbers}")
 print(f"unpackaged:")
 print(*mynumbers)
 
-d = {'key1': 'A', 'key2': 'B'}
+d = {"key1": "A", "key2": "B"}
 # This prints the keys
 print(*d)
 e = {**d}
@@ -67,7 +68,7 @@ version2(10, 20, 30)
 # This breaks if key,value parameter is given
 # version2(10,20,30, Extra=40)
 # Fixed by version 3
-version3(10,20,30,40,50, Extra=40)
+version3(10, 20, 30, 40, 50, Extra=40)
 
 
 # Test all() function
@@ -98,6 +99,6 @@ print(fruit_cubed)
 # all(fruit.cubed for fruit in fruit_salad.fruit)
 is_fruit_cubed = all(fruit_cubed)
 if is_fruit_cubed:
-    print('Proper fruit salad')
+    print("Proper fruit salad")
 else:
-    print('bad fruit')
+    print("bad fruit")

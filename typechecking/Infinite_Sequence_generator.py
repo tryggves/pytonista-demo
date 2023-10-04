@@ -2,6 +2,7 @@
 # This generator is a infinite sequence of integers
 #
 
+
 def infinite_sequence():
     num = 0
     while True:
@@ -9,7 +10,7 @@ def infinite_sequence():
         num += 1
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     # This needs you to stop the process manually, it will not exit the for loop.
     # for i in infinite_sequence():
     #     print(i, end=' ')

@@ -20,11 +20,12 @@ def do_twice(func):
         # see basics/Var_args.py
         func(*args, **kwargs)
         func(*args, **kwargs)
+
     return wrapper_do_twice
 
 
 def repeat(num_times=0):
-    """ Repeat the function call
+    """Repeat the function call
 
     :param num_times
     :return: callable wrapper function
@@ -44,12 +45,15 @@ def repeat(num_times=0):
             # This return ensures that the wrapped function return value
             # is passed to the caller.
             return value
+
         return wrapper_repeat
+
     return decorator_repeat
 
 
 def timer(func):
     """Print the runtime of the decorated function"""
+
     @functools.wraps(func)
     def wrapper_timer(*args, **kwargs):
         start_time = time.perf_counter()  # 1
@@ -65,15 +69,17 @@ def timer(func):
 # Here is a nice debug feature
 def debug(func):
     """Print the function signature and return value"""
+
     @functools.wraps(func)
     def wrapper_debug(*args, **kwargs):
         # repr is a function for creating human readable string of passed paraemter
-        args_repr = [repr(a) for a in args]                      # 1
+        args_repr = [repr(a) for a in args]  # 1
         # v!r means pass v to repr()
         kwargs_repr = [f"{k}={v!r}" for k, v in kwargs.items()]  # 2
-        signature = ", ".join(args_repr + kwargs_repr)           # 3
+        signature = ", ".join(args_repr + kwargs_repr)  # 3
         print(f"Calling {func.__name__}({signature})")
         value = func(*args, **kwargs)
-        print(f"{func.__name__!r} returned {value!r}")           # 4
+        print(f"{func.__name__!r} returned {value!r}")  # 4
         return value
+
     return wrapper_debug

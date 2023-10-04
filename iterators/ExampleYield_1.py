@@ -7,13 +7,14 @@
 # Python3 code to demonstrate
 # yield keyword
 
+
 # generator to print even numbers
 def print_even(test_list):
-    print('Calling function print_even()')
+    print("Calling function print_even()")
     for i in test_list:
         if i % 2 == 0:
             yield i
-            print('Picking up in print_even*() after yield...')
+            print("Picking up in print_even*() after yield...")
 
 
 # initializing list

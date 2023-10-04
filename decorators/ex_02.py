@@ -2,6 +2,7 @@
 # Inner functions
 #
 
+
 def parent():
     print("Printing from the parent() function")
 
@@ -31,10 +32,12 @@ def parent_1(num: int):
         return second_child
 
 
-if __name__ == '__main__':
-    print('===== Example 1 ==========================================================')
+if __name__ == "__main__":
+    print("===== Example 1 ==========================================================")
     parent()
-    print('\n====== Example 2 ==========================================================')
+    print(
+        "\n====== Example 2 =========================================================="
+    )
     # parent_1() returns function pointer depending on passed parameter
     print(f"Call 1: Function pointer returned by parent_1: {parent_1(1)}")
     print(f"Call 2: Function pointer returned by parent_1: {parent_1(2)}")

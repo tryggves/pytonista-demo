@@ -14,10 +14,15 @@ import argparse
 
 
 def main():
-
-    print("==============================================================================")
-    print("=== Argparse example                                                ==========")
-    print("==============================================================================")
+    print(
+        "=============================================================================="
+    )
+    print(
+        "=== Argparse example                                                =========="
+    )
+    print(
+        "=============================================================================="
+    )
 
     parser = argparse.ArgumentParser()
 
@@ -28,7 +33,9 @@ def main():
     # Here is an example where there is no value required, if given, results in setting myflag=TRUE
     # The flag comes in two variants: one-letter and word, this caused the args property 'myflag' to be
     # set.
-    parser.add_argument("-m", "--myflag", help="Flag without a value (true/false)", action="store_true")
+    parser.add_argument(
+        "-m", "--myflag", help="Flag without a value (true/false)", action="store_true"
+    )
 
     # another example of boolean flag, in this case the args property 'v' is to be set to True/False
     parser.add_argument("-v", help="Verbose flag", action="store_true")
@@ -48,5 +55,5 @@ def main():
     exit(0)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

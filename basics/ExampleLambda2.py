@@ -16,7 +16,7 @@ test_var = True
 
 # Note that lambdas can only contain expressions, NOT STATEMENTS (see ref link 1 above)
 # This is awkward use of lambda
-a = (lambda test_var : "Hello" if test_var else "Foff")(test_var)
+a = (lambda test_var: "Hello" if test_var else "Foff")(test_var)
 print(f"a={a}")
 
 # This is how to use ternary expression

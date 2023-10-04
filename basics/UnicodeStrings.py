@@ -12,10 +12,10 @@ print(test_string)
 # See https://en.wikipedia.org/wiki/List_of_Unicode_characters
 # There are many ways to represent unicode characters...
 # I  think this is Python 2
-degree_sign = u'\N{DEGREE SIGN}'
-degree_sign2 = u"\u00b0"
+degree_sign = "\N{DEGREE SIGN}"
+degree_sign2 = "\u00b0"
 # Python 3 should allow this
-degree_sign3 = '\u00b0'
+degree_sign3 = "\u00b0"
 
 
 print("Degree character is:", degree_sign)
@@ -25,11 +25,11 @@ print("Degree character 3 is:", degree_sign3)
 # Create regular expression
 deg_re = re.compile(degree_sign)
 # Substitute unicode degree character with string 'deg'
-patched = deg_re.sub('deg', test_string)
+patched = deg_re.sub("deg", test_string)
 print("Patch 1:", patched)
 
 # Repeat the substitution - this time using the python3 unicode character
-patched = re.sub('\u00b0', 'deg', test_string)
+patched = re.sub("\u00b0", "deg", test_string)
 print("Patch 2:", patched)
 
 # Search returns a Match Object
@@ -39,8 +39,7 @@ if match:
     unit = match.group(0)
     print("Found match")
     print("Match is:", unit)
-    patched_name = re.sub('\u00b0', 'deg', unit)
-    patched_name = re.sub('[()]', '', patched_name)
+    patched_name = re.sub("\u00b0", "deg", unit)
+    patched_name = re.sub("[()]", "", patched_name)
     unit = patched_name
     print("Unit is:", unit)
-

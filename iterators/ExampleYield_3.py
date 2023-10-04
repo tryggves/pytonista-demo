@@ -3,12 +3,13 @@
 # Checking number of occurrence of
 # geeks in string
 
+
 # generator to print even numbers
 def print_even(test_string):
-    print('print_even: Call function')
+    print("print_even: Call function")
     for i in test_string:
         if i == "geeks":
-            print('print_even(): yield')
+            print("print_even(): yield")
             yield i
 
 
@@ -21,8 +22,7 @@ count = 0
 test_string = test_string.split()
 
 for j in print_even(test_string):
-    print(f'main: j is {j}')
+    print(f"main: j is {j}")
     count = count + 1
 
 print(f"The number of geeks in string is : {count}")
-

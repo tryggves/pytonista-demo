@@ -58,7 +58,6 @@ def play() -> None:
     # Randomly play cards from each player's hand until empty
 
     while hands[start_player]:
-
         for name in turn_order:
             card = choose(hands[name])
             hands[name].remove(card)

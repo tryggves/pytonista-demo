@@ -2,19 +2,16 @@
 from wsgiref.simple_server import make_server
 
 
-def application (environ, start_response):
-
+def application(environ, start_response):
     # Sorting and stringifying the environment key, value pairs
-    response_body = [
-        '%s: %s' % (key, value) for key, value in sorted(environ.items())
-    ]
+    response_body = ["%s: %s" % (key, value) for key, value in sorted(environ.items())]
     # response_body = [f"{key}: {value}" for key, value in sorted(environ.items())]
-    response_body = '\n'.join(response_body)
+    response_body = "\n".join(response_body)
 
-    status = '200 OK'
+    status = "200 OK"
     response_headers = [
-        ('Content-Type', 'text/plain'),
-        ('Content-Length', str(len(response_body)))
+        ("Content-Type", "text/plain"),
+        ("Content-Length", str(len(response_body))),
     ]
     start_response(status, response_headers)
 
@@ -23,9 +20,9 @@ def application (environ, start_response):
 
 # Instantiate the server
 httpd = make_server(
-    'localhost',    # The host name
-    8051,           # A port number where to wait for the request
-    application     # The application object name, in this case a function
+    "localhost",  # The host name
+    8051,  # A port number where to wait for the request
+    application,  # The application object name, in this case a function
 )
 
 # Wait for a single request, serve it and quit

@@ -7,7 +7,7 @@
 # https://treyhunner.com/2018/10/asterisks-in-python-what-they-are-and-how-to-use-them/
 #
 my_list = [1, 2, 3]
-print(f'my_list is {my_list}')
+print(f"my_list is {my_list}")
 
 # Unpacking list with the * operator
 # Cannot use f-string with unpack
@@ -31,21 +31,20 @@ my_first_dict = {"A": 1, "B": 2}
 my_second_dict = {"C": 3, "D": 4}
 my_merged_dict = {**my_first_dict, **my_second_dict}
 
-print(f'my_merged_dict is {my_merged_dict}')
+print(f"my_merged_dict is {my_merged_dict}")
 # This prints the dictionary keys
-print('Dictionary keys')
+print("Dictionary keys")
 print(*my_merged_dict)
 # This prints the dictionary values
-print('Values')
+print("Values")
 print(*my_merged_dict.values())
 
 # experimental = [**my_first_dict]
 # experimental = list(*my_first_dict)
-print('Experiment with unwrapping')
+print("Experiment with unwrapping")
 print(*my_merged_dict)
 # experimental is a list of keys from my_merged_dict
 experimental = [*my_merged_dict]
 print(experimental)
-print(*experimental, sep=';')
-print(*experimental, sep=' \\\n')
-
+print(*experimental, sep=";")
+print(*experimental, sep=" \\\n")

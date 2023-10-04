@@ -5,13 +5,14 @@
 #
 ###########################################################################################
 
+
 # Declare the class
 class Person:
     firstName = "Per"
     lastName = "Parker"
 
     def fullname(self):
-        return self.firstName + ' ' + self.lastName
+        return self.firstName + " " + self.lastName
 
 
 # Subclassing
@@ -25,26 +26,32 @@ class Manager(Person):
 
 
 def main():
-    print("=============================================================================")
-    print("= Classes and object example                       ==========================")
-    print("=============================================================================")
+    print(
+        "============================================================================="
+    )
+    print(
+        "= Classes and object example                       =========================="
+    )
+    print(
+        "============================================================================="
+    )
 
     # Instantiate an object of class Person and print its contents
     per = Person()
-    print("Hello, I am\"", per.firstName, per.lastName, "\"")
+    print('Hello, I am"', per.firstName, per.lastName, '"')
 
     # Assign to a member variable
     per.firstName = "Kåre"
     # Formatting the text gives better control of the placement of quotes
-    print(f'Hello, I am \"{per.firstName} {per.lastName}\"')
+    print(f'Hello, I am "{per.firstName} {per.lastName}"')
 
     # Call member function
     print("Fullname:", per.fullname())
 
     # Instantiate subclass
     kyrre = Manager("Kyrre", "Kunst", per)
-    print(f'Manager: {kyrre.fullname()} manages {kyrre.my_managed_persons.fullname()}')
+    print(f"Manager: {kyrre.fullname()} manages {kyrre.my_managed_persons.fullname()}")
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

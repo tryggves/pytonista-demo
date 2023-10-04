@@ -22,7 +22,7 @@ PEOPLE = {
         "fname": "Easter",
         "lname": "Bunny",
         "timestamp": get_timestamp(),
-    }
+    },
 }
 
 

@@ -10,9 +10,10 @@ some_variable = 10001
 
 number = 42
 
+
 def outer_func():
     def inner_func():
-        print(f'Value of some_variable: {some_variable}')
+        print(f"Value of some_variable: {some_variable}")
 
     inner_func()
 
@@ -23,11 +24,12 @@ def access_number():
     # global number
     number = 7
 
+
 def main():
     print("=== GLOBAL VARIABLES EXAMPLE ===", "\n")
     outer_func()
     access_number()
-    print(f'number is {number}')
+    print(f"number is {number}")
 
 
 if __name__ == "__main__":

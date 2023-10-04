@@ -29,28 +29,28 @@ def my_sqr(x):
 
 
 print("Example with function.")
-print(f'3 square is {my_sqr(3)}')
-print(f'4 square is {my_sqr(4)}')
+print(f"3 square is {my_sqr(3)}")
+print(f"4 square is {my_sqr(4)}")
 
 # Try this out with lambda expression - this is not a best practice.
 # The lambda expression here makes it harder to read.
-print('Example with lambda')
-print(f'3 square is {(lambda x: x**2)(3)}')
-print(f'4 square is {(lambda x: x**2)(4)}')
+print("Example with lambda")
+print(f"3 square is {(lambda x: x**2)(3)}")
+print(f"4 square is {(lambda x: x**2)(4)}")
 for i in range(10):
-    print(f'sqr({i})={my_sqr(i)}')
+    print(f"sqr({i})={my_sqr(i)}")
 
 # Passing varargs
-print(f'varargs {(lambda *args: sum(args))(1,2,3)}')
+print(f"varargs {(lambda *args: sum(args))(1,2,3)}")
 # Passing kwargs (keyword arguments)
-print(f'kwargs {(lambda **kwargs: sum(kwargs.values()))(en=1, to=2, tre=3)}')
+print(f"kwargs {(lambda **kwargs: sum(kwargs.values()))(en=1, to=2, tre=3)}")
 
 # Unsure about the second argument
-print(f'Argument ex 1: {(lambda x, *, y=0, z=0: x + y + z)(1, y=2, z=3)}')
-print(f'Argument ex 2: {(lambda x, y=0, z=0: x + y + z)(1, y=2, z=3)}')
+print(f"Argument ex 1: {(lambda x, *, y=0, z=0: x + y + z)(1, y=2, z=3)}")
+print(f"Argument ex 2: {(lambda x, y=0, z=0: x + y + z)(1, y=2, z=3)}")
 # This does not work
 # print((lambda x, *, y=0, z=0: x + y + z)(1, 2, 3, y=4, z=5))
-print(f'Argument ex 3: {(lambda u, v, y=0, z=0: u + v + y + z)(1, 2, y=4, z=5)}')
+print(f"Argument ex 3: {(lambda u, v, y=0, z=0: u + v + y + z)(1, 2, y=4, z=5)}")
 
 
 #######################################################################################
@@ -58,16 +58,17 @@ print(f'Argument ex 3: {(lambda u, v, y=0, z=0: u + v + y + z)(1, 2, y=4, z=5)}'
 # on the given operation parameter and the two arguments. Pretty
 # neat example.
 
+
 # get() method gets the dictionary element given by operation (add, sub, etc),
 # in this case the lambda expression.
 # If the operation does not exist the lambda: None is returned
 # Note the ending () which calls the returned lambda function
 def dispatch_dict(operation, x, y):
     return {
-        'add': lambda: x + y,
-        'sub': lambda: x - y,
-        'mul': lambda: x * y,
-        'div': lambda: x / y,
+        "add": lambda: x + y,
+        "sub": lambda: x - y,
+        "mul": lambda: x * y,
+        "div": lambda: x / y,
     }.get(operation, lambda: None)()
 
 
@@ -83,7 +84,7 @@ print(f"2unknown1={dispatch_dict('unknown', 2, 1)}")
 # Free variable - everything expect parameters
 # Bound variable - parameter
 def outer_func(x):
-    y = 4       # Variable inside function scope
+    y = 4  # Variable inside function scope
 
     def inner_func(z):
         print(f"x = {x}, y = {y}, z = {z}")

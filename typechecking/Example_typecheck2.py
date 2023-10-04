@@ -11,8 +11,5 @@ def choose(items: List[Choosable]) -> Choosable:
     return random.choice(items)
 
 
-names = ['per', 'pal', 'espen', 'askeladd']
+names = ["per", "pal", "espen", "askeladd"]
 name = choose(names)
-
-
-

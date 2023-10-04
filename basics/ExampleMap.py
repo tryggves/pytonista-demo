@@ -42,7 +42,7 @@ print(res_list)
 # Define custom function
 def to_float(x: str):
     try:
-        return float(x.replace(',', '.'))
+        return float(x.replace(",", "."))
     except ValueError:
         return float("nan")
 
@@ -81,7 +81,7 @@ home_dir = os.path.expanduser("~")
 files_dirs = os.listdir(home_dir)
 files = list(map(lambda file_name: home_dir + "/" + file_name, files_dirs))
 aggregate_size = functools.reduce(operator.add, map(os.path.getsize, files))
-print(f'Aggregate size is {aggregate_size}')
+print(f"Aggregate size is {aggregate_size}")
 
 
 #####################################################################################
@@ -97,12 +97,12 @@ print("List comprehension list")
 lc_list = [to_float(x) for x in my_numbers]
 print(lc_list)
 
-my_numlist = list(range(10))            # range() is an iterator
+my_numlist = list(range(10))  # range() is an iterator
 print(my_numlist)
 
 my_second_range = range(10, 20)
 for x in my_second_range:
-    print(f'x+2={x + 2}')
+    print(f"x+2={x + 2}")
 
 #####################################################################################
 # Generator expressions return iterators as map() does
@@ -116,7 +116,7 @@ print(gen_list)
 gen_iterator = (to_float(x) for x in my_numbers)
 num = next(gen_iterator)
 while num is not None:
-    print(f'num={num}')
+    print(f"num={num}")
     try:
         num = next(gen_iterator)
     except StopIteration:
@@ -126,4 +126,4 @@ while num is not None:
 # re-initialized for the for-loop to work.
 gen_iterator = (to_float(x) for x in my_numbers)
 for num in gen_iterator:
-    print(f'num={num}')
+    print(f"num={num}")

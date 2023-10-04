@@ -14,13 +14,7 @@ print("s:\n", s)
 t = np.eye(3, 3)
 print(f"t:\n {t}")
 
-u = np.array([[1,1,1],
-            [1,1,1],
-            [1,1,1],
-            [1,1,1]])
+u = np.array([[1, 1, 1], [1, 1, 1], [1, 1, 1], [1, 1, 1]])
 print(f"u:\n {u}")
-v = s+u
+v = s + u
 print(f"s+u=\n {v}")
-
-
-

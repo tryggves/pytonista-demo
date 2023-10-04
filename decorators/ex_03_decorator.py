@@ -14,6 +14,7 @@ def my_decorator(func):
         print("Something is happening before the function is called.")
         func()
         print("Something is happening after the function is called.")
+
     return wrapper
 
 
@@ -27,6 +28,7 @@ def not_during_the_night(func):
             func()
         else:
             pass  # Hush, the neighbors are asleep
+
     return wrapper
 
 
@@ -42,10 +44,12 @@ def my_wrapper(func: callable):
 
     :type func: object function to be wrapped
     """
+
     def wrapper():
         print("Something is happening before the function is called.")
         func()
         print("Something is happening after the function is called.")
+
     return wrapper
 
 
@@ -57,36 +61,48 @@ def say_hello():
     print("Hello!")
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     # Call the decorator resulting in setting variable say_whee to the wrapper function
     # declared/defined inside my_decorator function
-    print('======= Example 1 ==============================================================')
-    print(f"Call say_whee() without decorator: ", end='')
+    print(
+        "======= Example 1 =============================================================="
+    )
+    print(f"Call say_whee() without decorator: ", end="")
     say_whee()
 
-    print('\n======= Example 2 ==============================================================')
+    print(
+        "\n======= Example 2 =============================================================="
+    )
     say_whee = my_decorator(say_whee)
-    print(f"Callable returned by my_decorator(say_whee): ", end='')
+    print(f"Callable returned by my_decorator(say_whee): ", end="")
     print(say_whee)
     # Calling the wrapper which then calls say_whee() function
-    print('\n======= Example 3 ==============================================================')
+    print(
+        "\n======= Example 3 =============================================================="
+    )
     print("Call the callable function")
     say_whee()
 
-    print('\n======= Example 4 ==============================================================')
+    print(
+        "\n======= Example 4 =============================================================="
+    )
     say_whee = not_during_the_night(say_whee)
     say_whee()
 
-    print('\n======= Example 5 ==============================================================')
+    print(
+        "\n======= Example 5 =============================================================="
+    )
     say_hello()
 
     # Example 4
     # Here we apply the wrapper defining an inner function
-    print('\n======= Example 4 ==============================================================')
+    print(
+        "\n======= Example 4 =============================================================="
+    )
 
     @my_wrapper
     def say_good_morning():
-        print('Good morning!')
+        print("Good morning!")
 
     # Then calling the function through the wrapper
     say_good_morning()

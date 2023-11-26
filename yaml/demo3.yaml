@@ -1,0 +1,7 @@
+---
+# Here is a list of strings
+# This does not work, but if you insert either < or | after mylist3: it will work
+mylist3:
+  "A string 1"
+  "A string 2"
+  "A string 3"

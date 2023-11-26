@@ -1,0 +1,10 @@
+# Testing yaml files
+
+---
+# Here is a list of mappings (dictionaries)
+mylist:
+- entry1: 'Hello'
+- entry2: 'World'
+- entry3: 'Again'
+
+

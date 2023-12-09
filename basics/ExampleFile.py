@@ -1,4 +1,8 @@
+import os
+import sys
+
 # Function
+print(f"CWD is {os.getcwd()}")
 
 # file handling examples
 print("File handling examples")

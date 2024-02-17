@@ -28,21 +28,21 @@ def my_sqr(x):
     return x**2
 
 
-print("Example with function.")
+print("====== Example with function.")
 print(f"3 square is {my_sqr(3)}")
 print(f"4 square is {my_sqr(4)}")
 
 # Try this out with lambda expression - this is not a best practice.
 # The lambda expression here makes it harder to read.
-print("Example with lambda")
+print("====== Example with lambda")
 print(f"3 square is {(lambda x: x**2)(3)}")
 print(f"4 square is {(lambda x: x**2)(4)}")
 for i in range(10):
     print(f"sqr({i})={my_sqr(i)}")
 
-# Passing varargs
+print("====== Passing varargs")
 print(f"varargs {(lambda *args: sum(args))(1,2,3)}")
-# Passing kwargs (keyword arguments)
+print("# Passing kwargs (keyword arguments")
 print(f"kwargs {(lambda **kwargs: sum(kwargs.values()))(en=1, to=2, tre=3)}")
 
 # Unsure about the second argument
@@ -71,7 +71,7 @@ def dispatch_dict(operation, x, y):
         "div": lambda: x / y,
     }.get(operation, lambda: None)()
 
-
+print("=== Run operation from dictionary of operations")
 print(f"1+2={dispatch_dict('add', 1, 2)}")
 print(f"2-1={dispatch_dict('sub', 2, 1)}")
 print(f"2unknown1={dispatch_dict('unknown', 2, 1)}")
@@ -95,7 +95,7 @@ def outer_func(x):
 
 # For each iteration of the loop, closure is assigned the return of outer_func()
 # called with the iteration value of i
-print("CLOSURE WITH INNER FUNCTION DEF")
+print("=== CLOSURE WITH INNER FUNCTION DEF")
 for i in range(3):
     closure = outer_func(i)
     # this in effect calls inner_func(i+5) (parameter z value becomes i+5)
@@ -108,7 +108,7 @@ def outer_func_l(x):
     return lambda z: x + y + z
 
 
-print("CLOSURE WITH INNER LAMBDA EXPRESSION")
+print("=== CLOSURE WITH INNER LAMBDA EXPRESSION")
 for ii in range(3):
     closure = outer_func_l(ii)
     print(f"closure({ii + 5}) = {closure(ii + 5)}")

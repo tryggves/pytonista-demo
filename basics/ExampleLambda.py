@@ -47,6 +47,8 @@ print(f"kwargs {(lambda **kwargs: sum(kwargs.values()))(en=1, to=2, tre=3)}")
 
 # Unsure about the second argument
 print(f"Argument ex 1: {(lambda x, *, y=0, z=0: x + y + z)(1, y=2, z=3)}")
+# Could the second argument be positional? Yes, but you have to name the variable to ref it in the expression
+print(f"Argument ex 1b: {(lambda x, *args, y=0, z=0: x + sum(args) + y + z)(1, 4, 5, y=2, z=3)}")
 print(f"Argument ex 2: {(lambda x, y=0, z=0: x + y + z)(1, y=2, z=3)}")
 # This does not work
 # print((lambda x, *, y=0, z=0: x + y + z)(1, 2, 3, y=4, z=5))
@@ -70,6 +72,7 @@ def dispatch_dict(operation, x, y):
         "mul": lambda: x * y,
         "div": lambda: x / y,
     }.get(operation, lambda: None)()
+
 
 print("=== Run operation from dictionary of operations")
 print(f"1+2={dispatch_dict('add', 1, 2)}")

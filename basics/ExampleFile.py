@@ -14,7 +14,7 @@ print("Done.")
 # Example of reading multiple lines from file with handling of lines
 # through a while loop.
 print("File loop 1")
-f2 = open("inputdata.txt", "r")
+f2 = open("basics/inputdata.txt", "r")
 line = f2.readline
 count = 1
 line = f2.readline()
@@ -28,7 +28,7 @@ print("DONE LOOP1")
 
 # Here is the same:
 print("File loop 2")
-with open("inputdata.txt", "r") as infile:
+with open("basics/inputdata.txt", "r") as infile:
     line = infile.readline
     count = 1
     line = infile.readline()

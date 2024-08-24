@@ -1,3 +1,4 @@
 # Project exclude paths
 protobuf/*_pb2.py
-/venv/
+/.venv/
+.DS_Store

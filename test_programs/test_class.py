@@ -1,6 +1,7 @@
 # content of test_class.py
 class TestClass:
     num = 1
+    x = 1
 
     def test_one(self):
         x = "this"
@@ -8,7 +9,7 @@ class TestClass:
 
     def test_two(self):
         x = "hello"
-        assert hasattr(x, "check")
+        assert hasattr(self, "x")
 
     def test_three(self):
         x = "check"

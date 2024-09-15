@@ -2,3 +2,4 @@
 protobuf/*_pb2.py
 /.venv/
 .DS_Store
+test_programs/__pycache__/

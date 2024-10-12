@@ -3,15 +3,16 @@
     "configurations": [
         {
             "name": "Python: Current File",
-            "type": "python",
+            "type": "debugpy",
             "request": "launch",
             "program": "${file}",
             "console": "integratedTerminal",
+            "cwd": "${fileDirname}",
             "justMyCode": true
         },
         {
             "name": "ArgumentParsing.py",
-            "type": "python",
+            "type": "debugpy",
             "request": "launch",
             "program": "${file}",
             "cwd": "${workspaceFolder}",
@@ -19,11 +20,10 @@
                 "10"
             ],
             "console": "integratedTerminal",
-            "justMyCode": true
         },
         {
             "name": "ExampleFile.py",
-            "type": "python",
+            "type": "debugpy",
             "request": "launch",
             "program": "${file}",
             "cwd": "${workspaceFolder}/basics",

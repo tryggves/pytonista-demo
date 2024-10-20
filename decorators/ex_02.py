@@ -26,6 +26,9 @@ def parent_1(num: int):
     def second_child() -> str:
         return "Call me Liam"
 
+    # Note that the return value is a pointer to the inner functions and
+    # not the value returned by the inner functions (in that case you have 
+    # to append parenthesis () meaning call the function)
     if num == 1:
         return first_child
     else:
